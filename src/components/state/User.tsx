@@ -6,14 +6,14 @@ type AuthUser = {
 }
 
 const User = () => {
-    const [user, setUser] = useState<AuthUser | null>(null)
+    const [user, setUser] = useState<AuthUser>({} as AuthUser) // <AuthUser> is the type annotation/assertion
     const handleLogin = () => {
         setUser({
             name: 'John',
             email: 'blah@blah.com'
         })}
     const handleLogout = () => {
-        setUser(null)
+        setUser({} as AuthUser)
     }
 
   return (
